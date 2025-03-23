@@ -1,5 +1,9 @@
-package com.raxrot;
+package com.raxrot.assertions;
 
+import com.raxrot.Student;
+import com.raxrot.StudentNotFoundException;
+import com.raxrot.StudentService;
+import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
 import java.util.Arrays;
@@ -112,7 +116,7 @@ class StudentServiceTest {
     @Test
     public void testAssetThrowsExactlyException(){
         StudentService studentService = new StudentService();
-        assertThrowsExactly(StudentNotFoundException.class,()->{
+        Assertions.assertThrowsExactly(StudentNotFoundException.class,()->{
             studentService.getStudentByName("Vlad");
         },"should throw StudentNotFoundException");
     }

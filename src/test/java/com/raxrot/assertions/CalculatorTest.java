@@ -1,5 +1,6 @@
-package com.raxrot;
+package com.raxrot.assertions;
 
+import com.raxrot.Calculator;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
