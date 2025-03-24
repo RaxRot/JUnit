@@ -2,6 +2,7 @@ package com.raxrot.parameterized;
 
 import com.raxrot.MathUtils;
 import org.junit.jupiter.params.ParameterizedTest;
+import org.junit.jupiter.params.provider.CsvFileSource;
 import org.junit.jupiter.params.provider.CsvSource;
 
 import static org.junit.jupiter.api.Assertions.*;
@@ -27,5 +28,12 @@ public class CsvSourceDemoTest {
     })
     void testToUpperCase(String input, String expected) {
         assertEquals(expected, input.toUpperCase());
+    }
+
+    @ParameterizedTest
+    @CsvFileSource(resources = "/test.csv")
+    public void testCsvFile(int number, int expected) {
+        MathUtils mathUtils = new MathUtils();
+        assertEquals(mathUtils.factorial(number), expected);
     }
 }
